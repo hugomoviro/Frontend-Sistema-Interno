@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/service/api.service';
+import { EmpresaService } from 'src/app/service/OrganizacionApi/Empresa.service';
+
 
 @Component({
   selector: 'app-listar-empresas',
@@ -9,17 +10,19 @@ import { ApiService } from 'src/app/service/api.service';
 export class ListarEmpresasComponent implements OnInit {
   empresas: any = {};
 
-  constructor(private apiService: ApiService) {}
+  constructor(private empresaService: EmpresaService) {}
 
   ngOnInit(): void {
     this.llenarDatosEmpresa();
   }
 
   llenarDatosEmpresa(){
-    this.apiService.getEmpresas().subscribe(e =>{
+    this.empresaService.getEmpresas().subscribe(e =>{
       this.empresas = e;
       console.log(this.empresas)
     });
   }
+
+
   
 }
