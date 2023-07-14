@@ -1,0 +1,24 @@
+<table fxFlex="80">
+    <thead>
+      <tr>
+        <th>Activa</th>
+        <th>Fecha de Constitución</th>
+        <th>Giro</th>
+        <th>Nombre</th>
+        <th>RFC</th>
+        <th>Tipo de Empresa ID</th>
+      </tr>
+    </thead>
+    <tbody fxFlex="70">
+        <tr fxFlex="70" *ngFor="let empresa of empresas.value">
+            <td>{{ empresa.Activa }}</td>
+            <td>{{ empresa.FechaDeConstitucion }}</td>
+            <td>{{ empresa.Giro }}</td>
+            <td>{{ empresa.Nombre }}</td>
+            <td>{{ empresa.RFC }}</td>
+            <td>{{ empresa.TipoDeEmpresaId }}</td>
+          </tr>
+          
+    </tbody>
+  </table>
+  
