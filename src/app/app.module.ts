@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CreateEmpresaComponent } from './Empresas/create-empresa/create-empresa.component';
 import { ListarEmpresasComponent } from './Empresas/listar-empresas/listar-empresas.component';
+import { ListarCandidatosComponent } from './Candidato/listar-candidatos/listar-candidatos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CreateEmpresaComponent,
-    ListarEmpresasComponent
+    ListarEmpresasComponent,
+    ListarCandidatosComponent
   ],
   imports: [
     BrowserModule,
