@@ -13,7 +13,6 @@ import { ListarCandidatosComponent } from './ReclutamientoApi/Candidato/listar-c
     HomeComponent,
     ListarEmpresasComponent,
     ListarCandidatosComponent,
-    CreateCandidatosComponent
   ],
   imports: [
     BrowserModule,
