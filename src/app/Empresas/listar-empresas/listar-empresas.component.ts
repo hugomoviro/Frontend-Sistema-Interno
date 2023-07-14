@@ -16,8 +16,8 @@ export class ListarEmpresasComponent implements OnInit {
   }
 
   llenarDatosEmpresa(){
-    this.apiService.getEmpresas().subscribe(data =>{
-      this.empresas = data;
+    this.apiService.getEmpresas().subscribe(e =>{
+      this.empresas = e;
       console.log(this.empresas)
     });
   }
