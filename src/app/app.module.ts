@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CreateEmpresaComponent } from './Empresas/create-empresa/create-empresa.component';
 import { ListarEmpresasComponent } from './Empresas/listar-empresas/listar-empresas.component';
-import { ListarCandidatosComponent } from './Candidato/listar-candidatos/listar-candidatos.component';
+import { ListarCandidatosComponent } from './ReclutamientoApi/Candidato/listar-candidatos/listar-candidatos.component';
+import { CreateCandidatosComponent } from './ReclutamientoApi/Candidato/create-candidatos/create-candidatos.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ListarCandidatosComponent } from './Candidato/listar-candidatos/listar-
     HomeComponent,
     CreateEmpresaComponent,
     ListarEmpresasComponent,
-    ListarCandidatosComponent
+    ListarCandidatosComponent,
+    CreateCandidatosComponent
   ],
   imports: [
     BrowserModule,
