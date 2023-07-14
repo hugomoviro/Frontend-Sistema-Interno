@@ -5,14 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ListarEmpresasComponent } from './OrganizacionApi/Empresas/listar-empresas/listar-empresas.component';
-import { ListarCandidatosComponent } from './Candidato/listar-candidatos/listar-candidatos.component';
+import { ListarCandidatosComponent } from './ReclutamientoApi/Candidato/listar-candidatos/listar-candidatos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ListarEmpresasComponent,
-    ListarCandidatosComponent
+    ListarCandidatosComponent,
+    CreateCandidatosComponent
   ],
   imports: [
     BrowserModule,

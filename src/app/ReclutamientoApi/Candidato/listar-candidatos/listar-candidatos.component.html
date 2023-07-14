@@ -1,0 +1,31 @@
+<style>
+    table {
+        width: 80%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+    thead {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<table style="width: 80%;">
+    <thead>
+        <tr>
+            <th style="width: 40%;">Estatus candidado Id</th>
+            <th style="width: 30%;">Años trabajando</th>
+            <th style="width: 30%;">Prestaciones esperadas</th>
+        </tr>
+    </thead>
+    <tbody style="width: 70%;">
+        <tr style="width: 70%;" *ngFor="let candidato of candidatos.value">
+            <td style="width: 40%;">{{ candidato.EstatusCandidadoId }}</td>
+            <td style="width: 30%;">{{ candidato.AniosTrabajando }}</td>
+            <td style="width: 30%;">{{ candidato.PrestacionesEsperadas }}</td>
+        </tr>
+    </tbody>
+</table>

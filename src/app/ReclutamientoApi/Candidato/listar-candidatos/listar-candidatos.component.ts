@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
+import { CandidatoService } from 'src/app/service/ReclutamientoApi/candidato.service';
 
 @Component({
   selector: 'app-listar-candidatos',
@@ -9,7 +10,7 @@ import { ApiService } from 'src/app/service/api.service';
 export class ListarCandidatosComponent {
   candidatos: any = {};
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: CandidatoService) {}
 
   ngOnInit(): void {
     this.llenarDatosCandidato();
