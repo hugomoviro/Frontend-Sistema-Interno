@@ -14,19 +14,11 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
-    this.llenarData()
-    this.llenarDatosEmpresa();
+    this.llenarData();
   }
 
   llenarData(){
     this.apiService.getData().subscribe(data => {
-      this.data = data;
-      console.log(this.data)
-    });
-  }
-
-  llenarDatosEmpresa(){
-    this.apiService.getEmpresas().subscribe(data =>{
       this.data = data;
       console.log(this.data)
     });
