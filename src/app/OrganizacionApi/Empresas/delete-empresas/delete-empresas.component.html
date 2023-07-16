@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-12 barNavigation">
+      <button type="button" mat-button class="btnNavigation" (click)="onCancel()">Company Settings List</button>
+    </div>
+  </div>
+  <hr class="hryellow" />
+  
+  <label class="title">Delete Record</label>
+  <hr class="hrblack" />
+  
+  <div fxLayout="column wrap" fxLayoutGap="10px">
+    <div fxLayout="row wrap" fxFlex>
+      <div fxFlex><strong>Empresa:</strong></div>
+      <div fxFlex>{{record.Nombre}}</div>
+    </div>
+  
+  
+    <div fxLayout="row wrap" fxFlex>
+      <div fxFlex><strong>Tipo de Empresa:</strong></div>
+      <div fxFlex>{{record.TipoDeEmpresaId}}</div>
+    </div>
+  
+    <div fxLayout="row wrap" fxFlex>
+      <div fxFlex><strong>Fecha de Constitucion:</strong></div>
+      <div fxFlex>{{record.FechaDeConstitucion}}</div>
+    </div>
+  
+    <div fxLayout="row wrap" fxFlex>
+      <div fxFlex><strong>Giro:</strong></div>
+      <div fxFlex>{{record.Giro}}</div>
+    </div>
+  
+    <div fxLayout="row wrap" fxFlex>
+      <div fxFlex><strong>RFC:</strong></div>
+      <div fxFlex>{{record.RFC}}</div>
+    </div>
+  </div>
+  <button mat-raised-button color="primary" (click)="deleteRecord()">Delete</button>&nbsp;&nbsp;&nbsp;
+  <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
