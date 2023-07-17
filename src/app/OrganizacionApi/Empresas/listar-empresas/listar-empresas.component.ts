@@ -39,6 +39,11 @@ export class ListarEmpresasComponent implements OnInit {
   public redirectToDelete = (id: string) => {
     let url: string = `/delete-empresa/${id}`;
     this.router.navigate([url]);
-  }  
+  }
+
+  public redirectToCreate = () => {
+    let url: string = `/create-empresa`;
+    this.router.navigate([url]);
 }
 
+}

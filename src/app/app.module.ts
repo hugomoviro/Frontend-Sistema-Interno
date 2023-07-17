@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ListarEmpresasComponent } from './OrganizacionApi/Empresas/listar-empresas/listar-empresas.component';
 import { ListarCandidatosComponent } from './ReclutamientoApi/Candidato/listar-candidatos/listar-candidatos.component';
 import { DeleteEmpresasComponent } from './OrganizacionApi/Empresas/delete-empresas/delete-empresas.component';
+import { CreateEmpresaComponent } from './OrganizacionApi/Empresas/create-empresa/create-empresa.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { DeleteEmpresasComponent } from './OrganizacionApi/Empresas/delete-empre
     ListarEmpresasComponent,
     ListarCandidatosComponent,
     DeleteEmpresasComponent,
+    CreateEmpresaComponent,
   ],
   imports: [
     BrowserModule,

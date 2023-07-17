@@ -10,7 +10,7 @@ export class EmpresaService{
     private urlGetEmpresas = 'https://localhost:5001/api/odata/Empresa';
     private urlGetEmpresa = 'https://localhost:5001/api/odata/Empresa/'
     private urlGetEmpresasAndTipoDeEmpresas = 'https://localhost:5001/api/odata/Empresa?$expand=TipoDeEmpresa($select=Nombre)';
-    private token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImZkMGIwZTFiLWQyZjktNDllMC1mYWRhLTA4ZGI0ODNmODBmZiIsIlhhZlNlY3VyaXR5QXV0aFBhc3NlZCI6IlhhZlNlY3VyaXR5QXV0aFBhc3NlZCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbiIsIlhhZlNlY3VyaXR5IjoiWGFmU2VjdXJpdHkiLCJYYWZMb2dvblBhcmFtcyI6InExWXFMVTR0OGt2TVRWV3lVbkpNeWMzTVU5SlJLa2dzTGk3UEwwb0JDaW5WQWdBPSIsImV4cCI6MTY4OTQ3NTg5NH0.1-uNs0-RkkUhFXHvDPeUo80viQOK3m8LzEi9CvtopKc';
+    private token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImZkMGIwZTFiLWQyZjktNDllMC1mYWRhLTA4ZGI0ODNmODBmZiIsIlhhZlNlY3VyaXR5QXV0aFBhc3NlZCI6IlhhZlNlY3VyaXR5QXV0aFBhc3NlZCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbiIsIlhhZlNlY3VyaXR5IjoiWGFmU2VjdXJpdHkiLCJYYWZMb2dvblBhcmFtcyI6InExWXFMVTR0OGt2TVRWV3lVbkpNeWMzTVU5SlJLa2dzTGk3UEwwb0JDaW5WQWdBPSIsImV4cCI6MTY4OTQ4MzU1MH0.8MM3We8K8nnjJcvgLnCOaYV7WFCvFJxQruplp1Hg0R4';
     constructor(private http: HttpClient, private activeRoute : ActivatedRoute) { }
 
     public getEmpresas(): Observable<any>{
@@ -47,6 +47,13 @@ export class EmpresaService{
           'Authorization': `Bearer ${this.token}`
         });
         return this.http.delete(route, { headers});
+      }
+
+      public create = (route: string, body: any) => {
+        const headers = new HttpHeaders({
+          'Authorization': `Bearer ${this.token}`
+        });
+        return this.http.post(route, body, { headers});
       }
 
 }

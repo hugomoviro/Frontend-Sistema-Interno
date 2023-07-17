@@ -1,5 +1,5 @@
 export interface Empresa {
-    Id: number;
+   // Id: number;
     Nombre: string;
     TipoDeEmpresaId: number;
     FechaDeConstitucion: Date;
