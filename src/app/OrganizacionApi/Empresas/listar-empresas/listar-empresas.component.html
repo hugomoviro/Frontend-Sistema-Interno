@@ -1,27 +1,32 @@
 <label class="title">Empresas</label>
 <hr class="hrblack" />
-
+<button  (click)="redirectToCreate()">Create</button>
 <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>RFC</th>
-        <th>Tipo de Empresa</th>
-        <th>Activa</th>
-        <th>Fecha de Constitución</th>
-        <th>Giro</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let empresa of empresas.value">
-        <td>{{ empresa.Nombre }}</td>
-        <td>{{ empresa.RFC }}</td>
-        <td>{{ empresa.TipoDeEmpresaId }}</td>
-        <td>{{ empresa.Activa }}</td>
-        <td>{{ empresa.FechaDeConstitucion }}</td>
-        <td>{{ empresa.Giro }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>RFC</th>
+      <th>Tipo de Empresa</th>
+      <th>Fecha de Constitución</th>
+      <th>Giro</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empresa of empresas.value">
+      <td>{{ empresa.Nombre }}</td>
+      <td>{{ empresa.RFC }}</td>
+      <td>{{ empresa.TipoDeEmpresa.Nombre }}</td>
+      <td>{{ empresa.FechaDeConstitucion }}</td>
+      <td>{{ empresa.Giro }}</td>
+      <td>
+        <button mat-button color="primary" (click)="redirectToUpdate(empresa.Id)">Actualizar</button>
+        <button mat-button color="warn" (click)="redirectToDelete(empresa.Id)">Eliminar</button>
+      </td>
+      
+    </tr>
+  </tbody>
+</table>
+
   
   
