@@ -31,4 +31,8 @@ export class HomeComponent implements OnInit {
   redireccionarAListarCandidatos(){
     this.router.navigate(['/listar-candidatos']);
   }
+
+  redireccionarACrearCandidatos(){
+    this.router.navigate(['/create-candidatos']);
+  }
 }
