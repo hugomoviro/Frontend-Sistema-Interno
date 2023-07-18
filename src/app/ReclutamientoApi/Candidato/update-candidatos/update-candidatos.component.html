@@ -1,12 +1,11 @@
 <div class="col-12 barNavigation">
-  <button type="button" class="btnNavigationR" (click)="onCancel()">Regresar</button>
+  <button type="button" class="btnNavigationR"  (click)="onCancel()">Regresar</button>
 </div>
 <hr class="hrblack" />
 
-<label class="title">Crear nuevo candidato</label>
+<label class="title">Editar Candidato</label>
 <hr class="hrblack" />
-
-<form class="candidato-form" (ngSubmit)="submitForm()" #candidatoForm="ngForm">
+<form class="candidato-form" (ngSubmit)="updateCandidato()" #candidatoForm="ngForm">
   <div class="form-group">
     <label for="Nombre">Nombre:</label>
     <input type="text" id="Nombre" name="Nombre" [(ngModel)]="candidato.Nombre" required>
@@ -72,11 +71,7 @@
     <label for="SaldoActual">Saldo actual:</label>
     <input type="number" id="SaldoActual" name="SaldoActual" [(ngModel)]="candidato.SaldoActual" required>
   </div>
-
-
-
-
-
+  
   <!-- Include other candidate attributes here -->
-  <button type="submit">Crear</button>
+  <button type="submit" (click)="updateCandidato()">Aceptar</button>
 </form>

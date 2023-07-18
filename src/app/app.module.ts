@@ -10,6 +10,8 @@ import { CreateCandidatosComponent } from './ReclutamientoApi/Candidato/create-c
 import { FormsModule } from '@angular/forms';
 import { DeleteEmpresasComponent } from './OrganizacionApi/Empresas/delete-empresas/delete-empresas.component';
 import { CreateEmpresaComponent } from './OrganizacionApi/Empresas/create-empresa/create-empresa.component';
+import { DeleteCandidatosComponent } from './ReclutamientoApi/Candidato/delete-candidatos/delete-candidatos.component';
+import { UpdateCandidatosComponent } from './ReclutamientoApi/Candidato/update-candidatos/update-candidatos.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { CreateEmpresaComponent } from './OrganizacionApi/Empresas/create-empres
     CreateCandidatosComponent,
     DeleteEmpresasComponent,
     CreateEmpresaComponent,
+    DeleteCandidatosComponent,
+    UpdateCandidatosComponent,
   ],
   imports: [
     BrowserModule,

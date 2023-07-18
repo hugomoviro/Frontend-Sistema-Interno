@@ -1,33 +1,61 @@
-<style>
-    table {
-        width: 80%;
-        border-collapse: collapse;
-    }
-    th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: center;
-    }
-    thead {
-        background-color: #f2f2f2;
-    }
-</style>
-
+<div class="col-12 barNavigation">
+    <button type="button" class="btnNavigationR" (click)="redirectToHome()">Regresar</button>
+</div>
+<div class="title">
+    <h1>Lista de Candidatos</h1>
+</div>
+<div class="button-create btn-create-div">
+    <button (click)="redirectToCreate()">Crear nuevo candidato</button>
+</div>
 <table style="width: 80%;">
     <thead>
         <tr>
-            <th style="width: 25%;">Nombre</th>
-            <th style="width: 25%;">Estatus candidado Id</th>
-            <th style="width: 25%;">Años trabajando</th>
-            <th style="width: 25%;">Prestaciones esperadas</th>
-        </tr>
+            <th style="width: 15%;">Nombre</th>
+            <th style="width: 15%;">Fecha de nacimineto</th>
+            <th style="width: 15%;">Telefono</th>
+            <th style="width: 15%;">Correo personal</th>
+
+            <th style="width: 15%;">Direccion</th>
+            <th style="width: 15%;">Estatus candidado Id</th>
+            <th style="width: 15%;">Años trabajando</th>
+            <th style="width: 15%;">Prestaciones esperadas</th>
+
+            <th style="width: 15%;">Modalidad de trabajo id</th>
+            <th style="width: 15%;">Expectativa salarial neta</th>
+            <th style="width: 15%;">Costo anual</th>
+            <th style="width: 15%;">Nivel de ingles id</th>
+
+            <th style="width: 15%;">Comentario entrevista</th>
+            <th style="width: 15%;">Ultimo grado de estudio</th>
+            <th style="width: 15%;">Saldo actual</th>
+            <th style="width: 15%;">Acciones</th>
+
     </thead>
     <tbody style="width: 70%;">
         <tr style="width: 70%;" *ngFor="let candidato of candidatos.value">
-            <td style="width: 25%;">{{ candidato.Nombre }}</td>
-            <td style="width: 25%;">{{ candidato.EstatusCandidadoId }}</td>
-            <td style="width: 25%;">{{ candidato.AniosTrabajando }}</td>
-            <td style="width: 25%;">{{ candidato.PrestacionesEsperadas }}</td>
+            <td style="width: 15%;">{{ candidato.Nombre }}</td>
+            <td style="width: 15%;">{{ candidato.FechaDelNacimiento }}</td>
+            <td style="width: 15%;">{{ candidato.Telefono }}</td>
+            <td style="width: 15%;">{{ candidato.CorreoPersonal }}</td>
+
+            <td style="width: 15%;">{{ candidato.Direccion }}</td>
+            <td style="width: 15%;">{{ candidato.EstatusCandidadoId }}</td>
+            <td style="width: 15%;">{{ candidato.AniosTrabajando }}</td>
+            <td style="width: 15%;">{{ candidato.PrestacionesEsperadas }}</td>
+
+            <td style="width: 15%;">{{ candidato.ModalidadDeTrabajoId }}</td>
+            <td style="width: 15%;">{{ candidato.ExpectativaSalarialNeta }}</td>
+            <td style="width: 15%;">{{ candidato.CostoTotalAnual }}</td>
+            <td style="width: 15%;">{{ candidato.NivelDeInglesId }}</td>
+
+            <td style="width: 15%;">{{ candidato.ComentarioEntrevista }}</td>
+            <td style="width: 15%;">{{ candidato.UltimoGradoDeEstudios }}</td>
+            <td style="width: 15%;">{{ candidato.SaldoActual }}</td>
+
+            <td>
+                <button class="btnNavigationUpdate" (click)="redirectToUpdate(candidato.Id)">Actualizar</button>
+                <button class="btnNavigationDelete" (click)="redirectToDelete(candidato.Id)">Eliminar</button>
+            </td>
         </tr>
     </tbody>
 </table>
