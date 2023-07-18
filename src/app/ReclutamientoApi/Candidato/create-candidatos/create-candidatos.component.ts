@@ -67,10 +67,16 @@ export class CreateCandidatosComponent {
           Telefono: ''
           // Add other candidate attributes here
         };
+        window.location.href = "listar-candidatos";
+
       },
       (error) => {
         console.error('Error creating candidate', error);
       }
     );
+  }
+  
+  public onCancel = () => {
+    window.location.href = "listar-candidatos";
   }
 }

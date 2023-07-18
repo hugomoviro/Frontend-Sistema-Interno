@@ -1,7 +1,6 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmpresaService } from 'src/app/service/OrganizacionApi/Empresa.service';
-import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-listar-empresas',
   templateUrl: './listar-empresas.component.html',
@@ -31,12 +30,12 @@ export class ListarEmpresasComponent implements OnInit {
     });
   }
 
-  public redirectToUpdate = (id: string) => {
+  public redirectToUpdate = (id: any) => {
     let url: string = `/empresas/update/${id}`;
     this.router.navigate([url]);
   }
 
-  public redirectToDelete = (id: string) => {
+  public redirectToDelete = (id: any) => {
     let url: string = `/delete-empresa/${id}`;
     this.router.navigate([url]);
   }
