@@ -12,6 +12,10 @@ import { DeleteEmpresasComponent } from './OrganizacionApi/Empresas/delete-empre
 import { CreateEmpresaComponent } from './OrganizacionApi/Empresas/create-empresa/create-empresa.component';
 import { DeleteCandidatosComponent } from './ReclutamientoApi/Candidato/delete-candidatos/delete-candidatos.component';
 import { UpdateCandidatosComponent } from './ReclutamientoApi/Candidato/update-candidatos/update-candidatos.component';
+import { ListarDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoCandidato/listar-documento-candidato/listar-documento-candidato.component';
+import { CreateDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoCandidato/create-documento-candidato/create-documento-candidato.component';
+import { DeleteDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoCandidato/delete-documento-candidato/delete-documento-candidato.component';
+import { UpdateDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoCandidato/update-documento-candidato/update-documento-candidato.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import { UpdateCandidatosComponent } from './ReclutamientoApi/Candidato/update-c
     CreateEmpresaComponent,
     DeleteCandidatosComponent,
     UpdateCandidatosComponent,
+    ListarDocumentoCandidatoComponent,
+    CreateDocumentoCandidatoComponent,
+    DeleteDocumentoCandidatoComponent,
+    UpdateDocumentoCandidatoComponent,
   ],
   imports: [
     BrowserModule,
