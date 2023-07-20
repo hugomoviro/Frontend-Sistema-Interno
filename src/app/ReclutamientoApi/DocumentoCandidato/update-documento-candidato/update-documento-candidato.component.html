@@ -1,0 +1,21 @@
+<div class="col-12 barNavigation">
+    <button type="button" class="btnNavigationR"  (click)="onCancel()">Regresar</button>
+  </div>
+  <hr class="hrblack" />
+  
+  <label class="title">Editar Candidato</label>
+  <hr class="hrblack" />
+  <form class="candidato-form" (ngSubmit)="updateDocumentoCandidato()" #candidatoForm="ngForm">
+    <div class="form-group">
+      <label for="DocumentoId">Tipo de documento:</label>
+      <input type="text" id="DocumentoId" name="DocumentoId" [(ngModel)]="documentoCandidato.DocumentoId" required>
+    </div>
+    <div class="form-group">
+      <label for="CandidatoId">Candidato:</label>
+      <input type="text" id="CandidatoId" name="CandidatoId" [(ngModel)]="documentoCandidato.CandidatoId"
+        required>
+    </div>
+    
+    <!-- Include other candidate attributes here -->
+    <button type="submit" (click)="updateDocumentoCandidato()">Aceptar</button>
+  </form>

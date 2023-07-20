@@ -1,0 +1,30 @@
+<div class="col-12 barNavigation">
+    <button type="button" class="btnNavigationR" (click)="redirectToHome()">Regresar</button>
+</div>
+<div class="title">
+    <h1>Lista de Documentos de Candidato</h1>
+</div>
+<div class="button-create btn-create-div">
+    <button (click)="redirectToCreate()">Crear</button>
+</div>
+<table style="width: 80%;">
+    <thead>
+        <tr>
+            <th style="width: 15%;">ID</th>
+            <th style="width: 15%;">Documento ID</th>
+            <th style="width: 15%;">Candidato ID</th>
+            <th style="width: 15%;">Acciones</th>
+
+    </thead>
+    <tbody style="width: 70%;">
+        <tr style="width: 70%;" *ngFor="let documentoCandidato of documentoCandidato.value">
+            <td style="width: 15%;">{{ documentoCandidato.Id }}</td>
+            <td style="width: 15%;">{{ documentoCandidato.DocumentoId }}</td>
+            <td style="width: 15%;">{{ documentoCandidato.CandidatoId }}</td>
+            <td>
+                <button class="btnNavigationUpdate" (click)="redirectToUpdate(documentoCandidato.Id)">Actualizar</button>
+                <button class="btnNavigationDelete" (click)="redirectToDelete(documentoCandidato.Id)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
