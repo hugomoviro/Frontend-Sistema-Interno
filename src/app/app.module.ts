@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ListarCandidatosComponent } from './ReclutamientoApi/Candidato/listar-candidatos/listar-candidatos.component';
@@ -14,6 +13,8 @@ import { CreateDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoC
 import { DeleteDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoCandidato/delete-documento-candidato/delete-documento-candidato.component';
 import { UpdateDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoCandidato/update-documento-candidato/update-documento-candidato.component';
 import { RepositoryService } from './shared/repository.service';
+import { RoutingModule } from './routing/routing.module';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { RepositoryService } from './shared/repository.service';
   ],
   imports: [
     BrowserModule,
+    RoutingModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

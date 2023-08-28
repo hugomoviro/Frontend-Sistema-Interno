@@ -17,10 +17,6 @@ import { UpdateDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoC
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  //Empresa
-  { path: 'empresa', loadChildren: () => import('./OrganizacionApi/Empresas/empresa.module').then(m => m.EmpresaModule) },
-
   //Candidato
   {path: 'listar-candidatos', component: ListarCandidatosComponent },
   {path: 'create-candidatos', component: CreateCandidatosComponent },
