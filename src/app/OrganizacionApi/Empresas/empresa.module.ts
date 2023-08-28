@@ -4,6 +4,7 @@ import { ListarEmpresasComponent } from './listar-empresas/listar-empresas.compo
 import { CreateEmpresaComponent } from './create-empresa/create-empresa.component';
 import { DeleteEmpresasComponent } from './delete-empresas/delete-empresas.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { EmpresaRoutingModule } from './empresa-routing/empresa-routing.module';
 
 
 
@@ -16,6 +17,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
+    EmpresaRoutingModule,
   ]
 })
 export class EmpresaModule { }

@@ -7,9 +7,9 @@ import { CommonModule } from "@angular/common";
 
 
 const routes: Routes = [
-    { path : 'empresa', component: ListarEmpresasComponent},
+    { path : '', component: ListarEmpresasComponent},
     { path: 'create', component: CreateEmpresaComponent},
-    { path: 'delete/id', component: DeleteEmpresasComponent},
+    { path: 'delete/:id', component: DeleteEmpresasComponent},
 ];
 
 @NgModule({
