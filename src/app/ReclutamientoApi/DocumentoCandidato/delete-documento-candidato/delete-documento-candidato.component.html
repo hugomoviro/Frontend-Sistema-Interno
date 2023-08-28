@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-12 barNavigation">
+        <button type="button" class="btnNavigationR" (click)="onCancel()">Regresar</button>
+    </div>
+    <hr class="hrblack" />
+
+    <label class="title">Eliminar documento</label>
+    <hr class="hrblack" />
+
+    <div class="delete" fxLayout="column wrap" fxLayoutGap="10px">
+        <div class="delete-group" fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>Tipo de documento:</strong></div>
+            <div fxFlex>{{docuCand.DocumentoId}}</div>
+        </div>
+        <div class="delete-group" fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>Candidato:</strong></div>
+            <div fxFlex>{{docuCand.CandidatoId}}</div>
+        </div>
+        <div class="div-btn-delete">
+            <button class="btnNavigationDelete" (click)="deleteRecord()">Delete</button>
+        </div>
+    </div>
+</div>

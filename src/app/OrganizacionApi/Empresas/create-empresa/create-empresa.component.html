@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-12 barNavigation">
+      <button type="button" mat-button class="btnNavigation" (click)="onCancel()">HLista de Empresas</button>
+    </div>
+  </div>
+  <hr class="hryellow" />
+
+
+<label class="title">Add New Record</label>
+<hr class="hrblack" />
+<form autocomplete="off" novalidate (ngSubmit)="create(dataForm.value)">
+    <div fxLayout="row" fxFlex>
+        <div fxFlex>
+          <strong>Empresa:</strong>
+        </div>
+        <div fxFlex>
+          <input placeholder="Nombre" formControlName="Nombre" id="Nombre" style="width:200px">
+        </div>  
+      </div> 
+</form>

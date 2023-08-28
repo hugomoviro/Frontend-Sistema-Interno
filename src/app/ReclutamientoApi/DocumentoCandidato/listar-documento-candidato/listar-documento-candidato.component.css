@@ -1,0 +1,91 @@
+.title {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  hr.hrblack {
+    border-color: black;
+  }
+  
+  table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+  }
+  
+  th {
+    background-color: lightgray;
+  }
+  
+  .btnNavigationR {
+    background-color: rgb(224, 224, 224);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    justify-content: left;
+  }
+  
+  btnNavigationR:hover {
+    background-color: #c2c2c2;
+  }
+  
+  .title {
+    display: flex; 
+    justify-content: center;
+  }
+  
+  .btn-create-div {
+    display: flex; 
+    justify-content: flex-end;
+  }
+  
+  .button-create button {
+    margin: 10px;
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+  }
+  
+  .button-create:hover button{
+    background-color: #45a049; /* Color de fondo al pasar el cursor por encima */
+  }
+  
+  .btnNavigationUpdate {
+    background-color: #396eff;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  
+  .btnNavigationUpdate:hover {
+    background-color: #1654ff;
+  }
+  
+  .btnNavigationDelete {
+    background-color: #ff3939;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btnNavigationDelete:hover {
+    background-color: #ff1616;
+  }

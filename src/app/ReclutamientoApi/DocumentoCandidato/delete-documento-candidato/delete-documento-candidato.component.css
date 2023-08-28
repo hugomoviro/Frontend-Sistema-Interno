@@ -1,0 +1,59 @@
+.delete {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+  
+  .delete-group {
+    margin-bottom: 15px;
+  }
+  
+  .btnNavigationR {
+    background-color: rgb(224, 224, 224);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    justify-content: left;
+  }
+  
+  btnNavigationR:hover {
+    background-color: #c2c2c2;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hrblack {
+    border: 1px solid black;
+    margin-bottom: 40px;
+  }
+  
+  .div-btn-delete {
+    display: flex;
+    justify-content: center;
+  }
+  .btnNavigationDelete {
+    background-color: #ff3939;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 30%;
+  }
+  
+  .btnNavigationDelete:hover {
+    background-color: #ff1616;
+  }

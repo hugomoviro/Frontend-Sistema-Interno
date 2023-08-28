@@ -14,8 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
-    this.llenarData()
-    this.llenarDatosEmpresa();
+    this.llenarData();
   }
 
   llenarData(){
@@ -25,14 +24,16 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  llenarDatosEmpresa(){
-    this.apiService.getEmpresas().subscribe(data =>{
-      this.data = data;
-      console.log(this.data)
-    });
-  }
-
   redireccionarAListarEmpresas() {
     this.router.navigate(['/listar-empresas']);
   }
+
+  redireccionarAListarCandidatos(){
+    this.router.navigate(['/listar-candidatos']);
+  }
+
+  redireccionarAListarDocumentosCandidato(){
+    this.router.navigate(['/listar-documento-candidato']);
+  }
+
 }

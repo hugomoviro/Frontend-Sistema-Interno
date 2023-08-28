@@ -1,0 +1,82 @@
+<div class="col-12 barNavigation">
+  <button type="button" class="btnNavigationR" (click)="onCancel()">Regresar</button>
+</div>
+<hr class="hrblack" />
+
+<label class="title">Crear nuevo candidato</label>
+<hr class="hrblack" />
+
+<form class="candidato-form" (ngSubmit)="submitForm()" #candidatoForm="ngForm">
+  <div class="form-group">
+    <label for="Nombre">Nombre:</label>
+    <input type="text" id="Nombre" name="Nombre" [(ngModel)]="candidato.Nombre" required>
+  </div>
+  <div class="form-group">
+    <label for="FechaDelNacimiento">Fecha de nacimiento:</label>
+    <input type="date" id="FechaDelNacimiento" name="FechaDelNacimiento" [(ngModel)]="candidato.FechaDelNacimiento"
+      required>
+  </div>
+  <div class="form-group">
+    <label for="Telefono">Teléfono:</label>
+    <input type="tel" id="Telefono" name="Telefono" [(ngModel)]="candidato.Telefono" required>
+  </div>
+  <div class="form-group">
+    <label for="CorreoPersonal">Correo personal:</label>
+    <input type="email" id="CorreoPersonal" name="CorreoPersonal" [(ngModel)]="candidato.CorreoPersonal" required>
+  </div>
+  <div class="form-group">
+    <label for="Direccion">Dirección:</label>
+    <input type="text" id="Direccion" name="Direccion" [(ngModel)]="candidato.Direccion" required>
+  </div>
+  <div class="form-group">
+    <label for="estatusId">Estatus Candidato (1-9):</label>
+    <input type="text" id="estatusId" name="estatusId" [(ngModel)]="candidato.EstatusCandidadoId" required>
+  </div>
+  <div class="form-group">
+    <label for="aniosTrabajando">Años trabajando:</label>
+    <input type="number" id="aniosTrabajando" name="aniosTrabajando" [(ngModel)]="candidato.AniosTrabajando" required>
+  </div>
+  <div class="form-group">
+    <label for="prestacionesEsperadas">Prestaciones esperadas:</label>
+    <input type="text" id="prestacionesEsperadas" name="prestacionesEsperadas"
+      [(ngModel)]="candidato.PrestacionesEsperadas" required>
+  </div>
+  <div class="form-group">
+    <label for="modalidad">Modalidad de trabajo (1-3):</label>
+    <input type="number" id="modalidad" name="modalidad" [(ngModel)]="candidato.ModalidadDeTrabajoId" required>
+  </div>
+  <div class="form-group">
+    <label for="ExpectativaSalarialNeta">Expectativa salarial neta:</label>
+    <input type="number" id="ExpectativaSalarialNeta" name="ExpectativaSalarialNeta"
+      [(ngModel)]="candidato.ExpectativaSalarialNeta" required>
+  </div>
+  <div class="form-group">
+    <label for="CostoTotalAnual">Costo total anual:</label>
+    <input type="number" id="CostoTotalAnual" name="CostoTotalAnual" [(ngModel)]="candidato.CostoTotalAnual" required>
+  </div>
+  <div class="form-group">
+    <label for="NivelDeIngles">Nivel de inglés (1-5):</label>
+    <input type="number" id="NivelDeIngles" name="NivelDeIngles" [(ngModel)]="candidato.NivelDeInglesId" required>
+  </div>
+  <div class="form-group">
+    <label for="ComentarioEntrevista">Comentarios entrevista:</label>
+    <input type="text" id="ComentarioEntrevista" name="ComentarioEntrevista"
+      [(ngModel)]="candidato.ComentarioEntrevista" required>
+  </div>
+  <div class="form-group">
+    <label for="UltimoGradoDeEstudios">Último grado de estudios:</label>
+    <input type="text" id="UltimoGradoDeEstudios" name="UltimoGradoDeEstudios"
+      [(ngModel)]="candidato.UltimoGradoDeEstudios" required>
+  </div>
+  <div class="form-group">
+    <label for="SaldoActual">Saldo actual:</label>
+    <input type="number" id="SaldoActual" name="SaldoActual" [(ngModel)]="candidato.SaldoActual" required>
+  </div>
+
+
+
+
+
+  <!-- Include other candidate attributes here -->
+  <button type="submit">Crear</button>
+</form>

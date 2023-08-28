@@ -1,0 +1,25 @@
+.title {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  hr.hrblack {
+    border-color: black;
+  }
+  
+  table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+  }
+  
+  th {
+    background-color: lightgray;
+  }
+  
