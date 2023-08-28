@@ -1,6 +1,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmpresaService } from 'src/app/service/OrganizacionApi/Empresa.service';
+import { RepositoryService } from 'src/app/shared/repository.service';
 @Component({
   selector: 'app-listar-empresas',
   templateUrl: './listar-empresas.component.html',
@@ -9,7 +10,7 @@ import { EmpresaService } from 'src/app/service/OrganizacionApi/Empresa.service'
 export class ListarEmpresasComponent implements OnInit {
   empresas: any = {};
  
-  constructor(private empresaService: EmpresaService, private router : Router) {}
+  constructor(private empresaService: EmpresaService, private router : Router, private repository : RepositoryService) {}
 
   ngOnInit(): void {
    // this.llenarDatosEmpresa();
@@ -17,6 +18,11 @@ export class ListarEmpresasComponent implements OnInit {
   }
 
   llenarDatosEmpresa(){
+    let url = 'Empresa'
+    this.repository.getData(url).subscribe(e => {
+      this.empresas = e;
+      console.log(this.empresas)
+    });
     this.empresaService.getEmpresas().subscribe(e =>{
       this.empresas = e;
       console.log(this.empresas)
@@ -24,7 +30,8 @@ export class ListarEmpresasComponent implements OnInit {
   }
 
   llenarDatosEmpresaCompleto(){
-    this.empresaService.getEmpresasAndTipoDeEmpresas().subscribe(e =>{
+    let url = 'Empresa?$expand=TipoDeEmpresa($select=Nombre)'
+    this.repository.getData(url).subscribe(e => {
       this.empresas = e;
       console.log(this.empresas)
     });

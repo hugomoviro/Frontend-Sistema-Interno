@@ -16,7 +16,7 @@ import { ListarDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoC
 import { CreateDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoCandidato/create-documento-candidato/create-documento-candidato.component';
 import { DeleteDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoCandidato/delete-documento-candidato/delete-documento-candidato.component';
 import { UpdateDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoCandidato/update-documento-candidato/update-documento-candidato.component';
-
+import { RepositoryService } from './shared/repository.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,14 +32,17 @@ import { UpdateDocumentoCandidatoComponent } from './ReclutamientoApi/DocumentoC
     CreateDocumentoCandidatoComponent,
     DeleteDocumentoCandidatoComponent,
     UpdateDocumentoCandidatoComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    RepositoryService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
