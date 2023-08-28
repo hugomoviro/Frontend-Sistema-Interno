@@ -1,0 +1,48 @@
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { environment } from "src/environments/environment";
+
+
+export class RepositoryService{
+   
+    constructor(private http: HttpClient){}
+
+    public getData = (route: string) =>
+    {
+        const headers = new HttpHeaders({
+            'Authorization': `Bearer ${environment.token}`
+        });
+        return this.http.get(this.createCompleteRoute(route, environment.urlAddress), {headers});
+    }
+
+    public getDataAsync = (route: string) =>
+    {
+        const headers = new HttpHeaders({
+            'Authorization': `Bearer ${environment.token}`
+        });
+        return this.http.get(this.createCompleteRoute(route, environment.urlAddress), {headers}).toPromise();
+    }
+
+    public create = (route: string, body: any) => {
+        const headers = new HttpHeaders({
+            'Authorization': `Bearer ${environment.token}`
+        });
+        return this.http.post(this.createCompleteRoute(route, environment.urlAddress), body, {headers});
+    }
+    public update = (route: string, body: any) => {
+        const headers = new HttpHeaders({
+            'Authorization': `Bearer ${environment.token}`}
+        );
+        return this.http.put(this.createCompleteRoute(route, environment.urlAddress), body, {headers});
+    }
+
+    public delete = (route: string) => {
+        const headers = new HttpHeaders({
+            'Authorization': `Bearer ${environment.token}`
+        });
+        return this.http.delete(this.createCompleteRoute(route, environment.urlAddress), {headers});
+    }
+
+    private createCompleteRoute = (route: string, envAddress: string) => {
+        return `${envAddress}/${route}`;
+      }
+}
