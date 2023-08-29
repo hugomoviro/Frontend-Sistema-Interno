@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { TipoDeEmpresa } from 'src/app/Models/TipoDeEmpresa.model';
 import { RepositoryService } from 'src/app/shared/repository.service';
 import { TipoDeEmpresaDeleteComponent } from '../tipo-de-empresa-delete/tipo-de-empresa-delete.component';
+import { ErrorHanderService } from 'src/app/shared/error-hander.service';
+import { ErrorDialogComponent } from 'src/app/shared/dialogs/error-dialog/error-dialog.component';
 
 
 @Component({
@@ -15,8 +17,10 @@ export class ListarTipoDeEmpresaComponent implements OnInit{
 
   public dataForm!: FormGroup;
   tipoDeEmpresas: any = {};
+  errorMessage: string | undefined;
   constructor(private repository: RepositoryService,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog,
+              private errorService: ErrorHanderService) { }
 
   ngOnInit(): void {
     this.dataForm = new FormGroup({
@@ -67,10 +71,28 @@ export class ListarTipoDeEmpresaComponent implements OnInit{
           this.repository.delete(url).subscribe(() => {
             console.log('Deleted record:', id);
             this.llenarDatosTipoDeEmpresa();
-          })
+          },
+          (error) => {
+            if(error.status === 500)
+            {
+              this.openErrorDialog();
+            }
+            this.errorService.handleError(error);
+            console.log(error);
+          }
+          )
         }
       });
 
     }
+  }
+
+  openErrorDialog() {
+    this.dialog.open(ErrorDialogComponent, {
+      width: '300px', // Ajusta el ancho según tus necesidades
+      data: {
+        message: 'El registro no puede ser eliminado porque tiene un registro asociado'
+      }
+    });
   }
 }
