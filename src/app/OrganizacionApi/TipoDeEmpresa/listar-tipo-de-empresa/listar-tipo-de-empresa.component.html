@@ -2,11 +2,11 @@
 <hr class="hrblack">
 <form [formGroup]="dataForm" autocomplete="off" novalidate (ngSubmit)="create(dataForm.value)">
     <div class="mb-3 d-flex align-items-center flex-column">
-        <label for="example" class="form-label">Deseas agregar otro Tipo de Empresa?</label>
-        <input type="text" style="width: 30%;" class="form-control text-center" formControlName="Descripcion" id="Descripcion" placeholder="Tipo de Empresa">
-        
+        <label for="example" class="form-label"> <strong>Deseas agregar otro Tipo de Empresa?</strong></label>
+        <input type="text" style="width: 30%;" class="form-control text-center" formControlName="Nombre" id="Nombre" placeholder="Tipo de Empresa">
+        <button class="btn btn-primary btn-sm" style="width:200px; margin-top: 30px;">Create</button>
     </div>
-    <button class="btn btn-primary btn-sm" style="width:200px">Create</button>
+    
 </form>
 
 <div class="d-flex justify-content-center">
@@ -14,14 +14,14 @@
         <thead class="thead-dark text-center">
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Acciones</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody class="text-center">
             <tr *ngFor="let tipoDeEmpresa of tipoDeEmpresas.value">
                 <td class="align-middle">{{ tipoDeEmpresa.Nombre }}</td>
-                <td class="align-middle">
-                    <a href="/update/{{ tipoDeEmpresa.Id }}" class="btn btn-primary btn-sm">Actualizar</a>
+                <td class="align-end">
+                    <a href="/update/{{ tipoDeEmpresa.Id }}" style="margin: auto 10px;" class="btn btn-primary btn-sm">Actualizar</a>
                     <a href="/delete/{{ tipoDeEmpresa.Id }}" class="btn btn-danger btn-sm">Eliminar</a>
                 </td>
             </tr>

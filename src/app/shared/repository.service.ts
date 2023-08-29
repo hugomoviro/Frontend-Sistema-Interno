@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { catchError } from "rxjs";
 import { environment } from "src/environments/environment";
 
 @Injectable({
@@ -29,8 +30,14 @@ export class RepositoryService{
         const headers = new HttpHeaders({
             'Authorization': `Bearer ${environment.token}`
         });
-        return this.http.post(this.createCompleteRoute(route, environment.urlAddress), body, {headers});
+        return this.http.post(this.createCompleteRoute(route, environment.urlAddress), body, {headers})
+                   .pipe(
+                       catchError((error) => {
+                           throw error;  // Re-throw the error to be caught by the calling code
+                       })
+                   );
     }
+    
     public update = (route: string, body: any) => {
         const headers = new HttpHeaders({
             'Authorization': `Bearer ${environment.token}`}

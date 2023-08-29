@@ -17,7 +17,7 @@ export class ListarTipoDeEmpresaComponent implements OnInit{
 
   ngOnInit(): void {
     this.dataForm = new FormGroup({
-      Descripcion: new FormControl('', [Validators.required]),
+      Nombre: new FormControl('', [Validators.required]),
     });
     this.llenarDatosTipoDeEmpresa();
   }
@@ -39,9 +39,9 @@ export class ListarTipoDeEmpresaComponent implements OnInit{
 
   private executeCreation = (dataFormValue: any) => {
     let newRecord: TipoDeEmpresa = {
-      Descripcion: dataFormValue.TipoDeEmpresa,
+      Nombre: dataFormValue.Nombre,
     }
-    let apiUrl = 'TipoDeEmpresa';
+    let apiUrl = 'tipodeempresa';
     this.repository.create(apiUrl, newRecord)
       .subscribe(res => {
         console.log(res);

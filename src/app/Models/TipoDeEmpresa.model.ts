@@ -1,3 +1,3 @@
 export interface TipoDeEmpresa {
-    Descripcion: string;
+    Nombre: string;
 }
