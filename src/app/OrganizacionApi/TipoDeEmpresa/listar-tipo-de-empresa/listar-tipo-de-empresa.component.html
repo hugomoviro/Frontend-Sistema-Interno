@@ -22,7 +22,7 @@
                 <td class="align-middle">{{ tipoDeEmpresa.Nombre }}</td>
                 <td class="align-end">
                     <a href="/update/{{ tipoDeEmpresa.Id }}" style="margin: auto 10px;" class="btn btn-primary btn-sm">Actualizar</a>
-                    <a href="/delete/{{ tipoDeEmpresa.Id }}" class="btn btn-danger btn-sm">Eliminar</a>
+                    <button (click)="deleteTipoDeEmpresa(tipoDeEmpresa.Id)" class="btn btn-danger btn-sm">Eliminar</button>
                 </td>
             </tr>
         </tbody>

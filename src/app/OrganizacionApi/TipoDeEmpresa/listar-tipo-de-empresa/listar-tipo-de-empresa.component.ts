@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { TipoDeEmpresa } from 'src/app/Models/TipoDeEmpresa.model';
 import { RepositoryService } from 'src/app/shared/repository.service';
+import { TipoDeEmpresaDeleteComponent } from '../tipo-de-empresa-delete/tipo-de-empresa-delete.component';
+
 
 @Component({
   selector: 'app-listar-tipo-de-empresa',
@@ -12,8 +15,8 @@ export class ListarTipoDeEmpresaComponent implements OnInit{
 
   public dataForm!: FormGroup;
   tipoDeEmpresas: any = {};
-  constructor(private repository: RepositoryService
-              ) { }
+  constructor(private repository: RepositoryService,
+              private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.dataForm = new FormGroup({
@@ -49,8 +52,25 @@ export class ListarTipoDeEmpresaComponent implements OnInit{
       }
       )
   }
-  
 
+  public deleteTipoDeEmpresa(id: number | undefined)
+  {
+    if(id !== undefined)
+    {
+      const dialogRef = this.dialog.open(TipoDeEmpresaDeleteComponent, {
+        width: '400px',
+      }
+      );
+      dialogRef.afterClosed().subscribe(result => {
+        if(result === 'yes'){
+          let url = 'tipodeempresa/' + id;
+          this.repository.delete(url).subscribe(() => {
+            console.log('Deleted record:', id);
+            this.llenarDatosTipoDeEmpresa();
+          })
+        }
+      });
 
-
+    }
+  }
 }

@@ -33,7 +33,7 @@ export class RepositoryService{
         return this.http.post(this.createCompleteRoute(route, environment.urlAddress), body, {headers})
                    .pipe(
                        catchError((error) => {
-                           throw error;  // Re-throw the error to be caught by the calling code
+                           throw error; 
                        })
                    );
     }
@@ -49,7 +49,12 @@ export class RepositoryService{
         const headers = new HttpHeaders({
             'Authorization': `Bearer ${environment.token}`
         });
-        return this.http.delete(this.createCompleteRoute(route, environment.urlAddress), {headers});
+        return this.http.delete(this.createCompleteRoute(route, environment.urlAddress), {headers})
+        .pipe(
+            catchError((error) => {
+                throw error;
+            })
+        );
     }
 
     private createCompleteRoute = (route: string, envAddress: string) => {
