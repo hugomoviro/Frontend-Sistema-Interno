@@ -42,7 +42,13 @@ export class RepositoryService{
         const headers = new HttpHeaders({
             'Authorization': `Bearer ${environment.token}`}
         );
-        return this.http.put(this.createCompleteRoute(route, environment.urlAddress), body, {headers});
+        return this.http.patch(this.createCompleteRoute(route, environment.urlAddress), body, {headers})
+        .pipe(
+            catchError((error) => {
+                console.log(error);
+                throw error;
+            })
+        );
     }
 
     public delete = (route: string) => {

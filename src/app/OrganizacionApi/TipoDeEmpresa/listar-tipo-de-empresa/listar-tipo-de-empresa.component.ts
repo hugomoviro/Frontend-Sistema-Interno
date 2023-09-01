@@ -6,6 +6,7 @@ import { RepositoryService } from 'src/app/shared/repository.service';
 import { TipoDeEmpresaDeleteComponent } from '../tipo-de-empresa-delete/tipo-de-empresa-delete.component';
 import { ErrorHanderService } from 'src/app/shared/error-hander.service';
 import { ErrorDialogComponent } from 'src/app/shared/dialogs/error-dialog/error-dialog.component';
+import { TipoDeEmpresaUpdateComponent } from '../tipo-de-empresa-update/tipo-de-empresa-update.component';
 
 
 @Component({
@@ -16,6 +17,7 @@ import { ErrorDialogComponent } from 'src/app/shared/dialogs/error-dialog/error-
 export class ListarTipoDeEmpresaComponent implements OnInit{
 
   public dataForm!: FormGroup;
+  public dataFormUpdate!: FormGroup;
   tipoDeEmpresas: any = {};
   errorMessage: string | undefined;
   constructor(private repository: RepositoryService,
@@ -26,6 +28,7 @@ export class ListarTipoDeEmpresaComponent implements OnInit{
     this.dataForm = new FormGroup({
       Nombre: new FormControl('', [Validators.required]),
     });
+    
     this.llenarDatosTipoDeEmpresa();
   }
 
@@ -63,6 +66,7 @@ export class ListarTipoDeEmpresaComponent implements OnInit{
     {
       const dialogRef = this.dialog.open(TipoDeEmpresaDeleteComponent, {
         width: '400px',
+        
       }
       );
       dialogRef.afterClosed().subscribe(result => {
@@ -95,4 +99,31 @@ export class ListarTipoDeEmpresaComponent implements OnInit{
       }
     });
   }
+
+  public updateTipoDeEmpresa(id: number | undefined) {
+    if (id !== undefined) {
+      const dialogRef = this.dialog.open(TipoDeEmpresaUpdateComponent, {
+        width: '400px',
+        data: id
+      });
+  
+      dialogRef.afterClosed().subscribe(updatedData => {
+        if (updatedData) {
+          let url = 'tipodeempresa/' + id;
+          this.repository.update(url, updatedData).subscribe(() => {
+            console.log('Updated record:', id);
+            this.llenarDatosTipoDeEmpresa();
+          },
+          (error) => {
+            if (error.status === 500) {
+              this.openErrorDialog();
+            }
+            this.errorService.handleError(error);
+            console.log(error);
+          });
+        }
+      });
+    }
+  }
+
 }

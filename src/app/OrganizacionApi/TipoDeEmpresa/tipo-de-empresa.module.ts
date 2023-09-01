@@ -7,13 +7,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TipoDeEmpresaDeleteComponent } from './tipo-de-empresa-delete/tipo-de-empresa-delete.component';
 import {MatIconModule} from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { TipoDeEmpresaUpdateComponent } from './tipo-de-empresa-update/tipo-de-empresa-update.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     ListarTipoDeEmpresaComponent,
-    TipoDeEmpresaDeleteComponent
+    TipoDeEmpresaDeleteComponent,
+    TipoDeEmpresaUpdateComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     TipoDeEmpresaRoutingModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ]
 })
 export class TipoDeEmpresaModule { }
