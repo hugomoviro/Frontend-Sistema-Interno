@@ -20,6 +20,9 @@ import {MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { CreateDocumentoComponent } from './ReclutamientoApi/Documento/create-documento/create-documento.component';
+import { DeleteDocumentoComponent } from './ReclutamientoApi/Documento/delete-documento/delete-documento.component';
+import { ListarDocumentoComponent } from './ReclutamientoApi/Documento/listar-documento/listar-documento.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +35,9 @@ import { MatTableModule } from '@angular/material/table';
     CreateDocumentoCandidatoComponent,
     DeleteDocumentoCandidatoComponent,
     UpdateDocumentoCandidatoComponent,
+    CreateDocumentoComponent,
+    DeleteDocumentoComponent,
+    ListarDocumentoComponent,
     
     
   ],
