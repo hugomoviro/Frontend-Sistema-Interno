@@ -1,1 +1,13 @@
-<p>tipo-de-documento-delete works!</p>
+<div class="dialog-content">
+    
+    <h2 mat-dialog-title>Borrar Tipo de Documento?</h2>
+    <mat-dialog-content>
+      <div class="centered-icon">
+        <mat-icon color="warn" class="warning-icon">warning</mat-icon>
+    </div>
+    </mat-dialog-content>
+    <mat-dialog-actions class="centered-buttons">
+      <button style="margin: auto 10px; width: 50px;" class="btn btn-danger btn-md" mat-button mat-dialog-close mat-raised-button color="warn"  (click)="confirmDelete()">Si</button>
+      <button style="margin: auto 10px; width: 50px;" class="btn btn-primary btn-md"  mat-button mat-dialog-close mat-raised-button color="primary" >No</button>
+    </mat-dialog-actions>
+  </div>

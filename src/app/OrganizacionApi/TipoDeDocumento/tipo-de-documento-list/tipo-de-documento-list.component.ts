@@ -58,6 +58,14 @@ export class TipoDeDocumentoListComponent {
       }
       )
   }
+  openErrorDialog() {
+    this.dialog.open(ErrorDialogComponent, {
+      width: '300px', // Ajusta el ancho según tus necesidades
+      data: {
+        message: 'El registro no puede ser eliminado porque tiene un registro asociado'
+      }
+    });
+  }
 
   public deleteTipoDeDocumento(id: number | undefined)
   {
@@ -65,11 +73,28 @@ export class TipoDeDocumentoListComponent {
     {
       const dialogRef = this.dialog.open(TipoDeDocumentoDeleteComponent, {
         width: '400px',
-        data: {id: id}
-      });
+        
+      }
+      );
       dialogRef.afterClosed().subscribe(result => {
-        this.llenarDatosTipoDeDocumento();
+        if(result === 'yes'){
+          let url = 'tipodedocumento/' + id;
+          this.repository.delete(url).subscribe(() => {
+            console.log('Deleted record:', id);
+            this.llenarDatosTipoDeDocumento();
+          },
+          (error) => {
+            if(error.status === 500)
+            {
+              this.openErrorDialog();
+            }
+            this.errorService.handleError(error);
+            console.log(error);
+          }
+          )
+        }
       });
+
     }
   }
   

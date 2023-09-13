@@ -1,1 +1,16 @@
-<p>tipo-de-documento-update works!</p>
+<div class="dialog-content">
+    <h2 mat-dialog-title>Actualizar Tipo de Empresa</h2>
+    <form [formGroup]="dataForm" (ngSubmit)="confirmUpdate()">
+      <mat-dialog-content>
+        <div class="centered-input">
+          <mat-form-field>
+            <input style="text-align: center;" matInput formControlName="Nombre" [placeholder]="'Nuevo valor'">
+          </mat-form-field>
+        </div>
+      </mat-dialog-content>
+      <mat-dialog-actions class="centered-buttons">
+        <button style="margin: auto 10px; width: 90px;" class="btn btn-primary btn-md" mat-button mat-raised-button color="primary" type="submit">Actualizar</button>
+        <button style="margin: auto 10px; width: 90px;" class="btn btn-secondary btn-md" mat-button mat-dialog-close mat-raised-button color="warn">Cancelar</button>
+      </mat-dialog-actions>
+    </form>
+  </div>
