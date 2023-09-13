@@ -11,6 +11,8 @@ const routes : Routes = [
   { path: 'tipodeempresa', loadChildren: () => import('./../OrganizacionApi/TipoDeEmpresa/tipo-de-empresa.module').then(m => m.TipoDeEmpresaModule) },
   //Tipo de documento
   { path: 'tipodedocumento', loadChildren: () => import('./../OrganizacionApi/TipoDeDocumento/tipo-de-documento.module').then(m => m.TipoDeDocumentoModule) },
+  // Tipo de puesto
+  { path: 'tipodepuesto', loadChildren: () => import('./../OrganizacionApi/TipoDePuesto/tipo-de-puesto.module').then(m => m.TipoDePuestoModule) },
 ];
 
 @NgModule({
