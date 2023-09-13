@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   }
 
   redireccionarAListarEmpresas() {
-    this.router.navigate(['/listar-empresas']);
+    this.router.navigate(['/empresa']);
   }
 
   redireccionarAListarCandidatos(){

@@ -1,13 +1,51 @@
 <div>
-    <h2>Data API demo</h2>
-    <ul>
-        <li *ngFor="let item of data">
-            {{item.name}}
-        </li>
-    </ul>
+  <div>
+    <h2 class="h2-title">Moviro: Sistema interno de Recursos Humanos</h2>
+  </div>
 
-    <button (click)="redireccionarAListarEmpresas()">Ir a Listar Empresas</button>
-    <button (click)="redireccionarAListarCandidatos()">Ir a Listar Candidatos</button>
-    <button (click)="redireccionarAListarDocumentosCandidato()">Ir a Lista de Documentos de Candidato</button>
-
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="accordion" id="accordionExample">
+          <!-- Tarjeta 1 -->
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color: #693E85;">
+                  Organización
+                </button>
+              </h2>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <button type="button" class="btn btn-light" (click)="redireccionarAListarEmpresas()">Empresas</button><br>
+                <a class="btn btn-light" href="/tipodeempresa" role="button">Tipo de Empresa</a> <br>
+                <a class="btn btn-light" href="/tipodedocumento" role="button">Tipo de Documento</a> <br>
+                <a class="btn btn-light" href="/tipodepuesto" role="button">Tipo de Puesto</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tarjeta 2 -->
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: #693E85;">
+                  Reclutamiento
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <button type="button" class="btn btn-light" (click)="redireccionarAListarCandidatos()">Candidatos</button><br>
+                <button type="button" class="btn btn-light" (click)="redireccionarAListarDocumentosCandidato()">Documentos de Candidato</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
