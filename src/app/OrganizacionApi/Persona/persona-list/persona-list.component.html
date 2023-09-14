@@ -27,7 +27,7 @@
                 <td class="align-middle">{{ persona.CorreoTrabajo }}</td>
                 <td class="align-middle">{{ persona.CorreoPersonal }}</td>
                 <td class="align-middle">{{ persona.Telefono }}</td>
-                <td class="align-middle">{{ persona.Activado ? 'No' : 'Si' }}</td>
+                <td class="align-middle">{{ persona.Activa ? 'Si' : 'No' }}</td>
                 <td class="align-middle">{{ persona.Puesto.Descripcion }}</td>
                 <td class="align-end">
                     <button (click)="deletePersona(persona.Id)" class="btn btn-danger btn-sm">Eliminar</button>
