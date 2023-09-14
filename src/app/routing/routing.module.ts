@@ -13,6 +13,8 @@ const routes : Routes = [
   { path: 'tipodedocumento', loadChildren: () => import('./../OrganizacionApi/TipoDeDocumento/tipo-de-documento.module').then(m => m.TipoDeDocumentoModule) },
   // Tipo de puesto
   { path: 'tipodepuesto', loadChildren: () => import('./../OrganizacionApi/TipoDePuesto/tipo-de-puesto.module').then(m => m.TipoDePuestoModule) },
+  // Persona
+  { path: 'persona', loadChildren: () => import('./../OrganizacionApi/Persona/persona.module').then(m => m.PersonaModule) },
 ];
 
 @NgModule({
