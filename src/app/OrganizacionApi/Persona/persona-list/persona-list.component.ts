@@ -69,8 +69,13 @@ export class PersonaListComponent implements OnInit{
 
   //editar
   editPersona(id: number | undefined){
-    let url: string = `persona/editarpersona/${id}`;
-    this.router.navigate([url]);
+    if (id) {
+      let url: string = `persona/editarpersona/${id}`;
+      console.log(url);
+      this.router.navigate([url]);
+    } else {
+      console.error('El ID no es una cadena válida.');
+    }
   }
 
   addPersona(){
