@@ -37,6 +37,12 @@ export class PersonaListComponent implements OnInit{
     // Aquí iría tu lógica para eliminar la persona
   }
 
+  //editar
+  editPersona(id: number | undefined){
+    let url: string = `persona/editarpersona/${id}`;
+    this.router.navigate([url]);
+  }
+
   addPersona(){
     let url: string = `persona/crearpersona`;
     this.router.navigate([url]);

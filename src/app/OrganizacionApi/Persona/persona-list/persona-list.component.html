@@ -30,7 +30,11 @@
                 <td class="align-middle">{{ persona.Activa ? 'Si' : 'No' }}</td>
                 <td class="align-middle">{{ persona.Puesto.Descripcion }}</td>
                 <td class="align-end">
-                    <button (click)="deletePersona(persona.Id)" class="btn btn-danger btn-sm">Eliminar</button>
+                    <div style="display: flex; justify-content: space-between; margin: 0 20px;">
+                        <button style="margin: auto 10px;" (click)="deletePersona(persona.Id)" class="btn btn-danger btn-sm">Eliminar</button>
+                        <button (click)="editPersona(persona.Id)" class="btn btn-warning btn-sm">Editar</button>
+                    </div>
+                    
                 </td>
             </tr>
         </tbody>
