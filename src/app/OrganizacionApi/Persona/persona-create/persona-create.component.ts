@@ -14,11 +14,7 @@ export class PersonaCreateComponent implements OnInit{
 
     public nuevaPersona!: FormGroup;
 
-  listaDePuestos: Puesto[] = [
-    { Id: "39184CD7-6B17-4639-9AEC-90CDFCBD9184", Descripcion: 'Lider de proyectos' }, // Ejemplo de datos, reemplaza con tus propios puestos
-    { Id: "828282", Descripcion: 'Puesto 2' },
-    // Agrega más puestos si es necesario
-  ];
+  listaDePuestos: Puesto[] = [];
 
   constructor(private router: Router,
               private repository: RepositoryService,
@@ -36,6 +32,8 @@ export class PersonaCreateComponent implements OnInit{
       Activa: new FormControl(false, [Validators.required]),
       PuestoId: new FormControl('', [Validators.required]) // Inicializamos como nulo, luego se seleccionará desde el combo box
     });
+
+    this.getListaDePuestos();
   }
 
   createPersona = (nuevaPersonaValue: any) => {
@@ -62,6 +60,16 @@ export class PersonaCreateComponent implements OnInit{
         this.router.navigate(['/persona']);
       }
       )
+  }
+
+  //ObtenerListaDePuestos
+  public getListaDePuestos = () => {
+    let url = 'puesto';
+    this.repository.getData(url)
+    .subscribe((res: any) => {
+      this.listaDePuestos = res.value as Puesto[];
+      console.log('Lista de Puestos:', this.listaDePuestos);
+    });
   }
 
   //Boton de cancelar
