@@ -1,7 +1,7 @@
 export interface Persona {
     Id?: number;
     Nombre: string;
-    FechaDeNacimiento: string; // Dependiendo del formato de fecha que utilices
+    FechaDeNacimiento?: string | null; // Dependiendo del formato de fecha que utilices
     Direccion: string;
     CorreoTrabajo: string;
     CorreoPersonal: string;

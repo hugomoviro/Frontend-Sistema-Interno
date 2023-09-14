@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PersonaCreateComponent } from './persona-create/persona-create.component';
+import { DatePipe } from '@angular/common';
+
 
 
 
@@ -27,6 +29,7 @@ import { PersonaCreateComponent } from './persona-create/persona-create.componen
     MatIconModule,
     MatDialogModule,
     FormsModule
-  ]
+  ],
+  providers: [DatePipe],
 })
 export class PersonaModule { }

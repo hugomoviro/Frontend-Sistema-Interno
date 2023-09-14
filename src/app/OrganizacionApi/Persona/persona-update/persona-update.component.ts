@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -19,7 +20,8 @@ export class PersonaUpdateComponent implements OnInit{
     private router: Router,
     private route: ActivatedRoute,
     private repository: RepositoryService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private datePipe : DatePipe
   ) { }
 
   ngOnInit(): void {
@@ -49,6 +51,8 @@ export class PersonaUpdateComponent implements OnInit{
     this.repository.getData(url)
       .subscribe((res: any) => {
         const persona: Persona = res as Persona;
+        //Fecha dd/mm/yyyy
+        persona.FechaDeNacimiento = this.datePipe.transform(persona.FechaDeNacimiento, 'yyyy-MM-dd');
         this.personaForm.patchValue(persona);
       });
   }
