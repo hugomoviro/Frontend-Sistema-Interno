@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Persona } from 'src/app/Models/Persona.model';
 import { ErrorHanderService } from 'src/app/shared/error-hander.service';
 import { RepositoryService } from 'src/app/shared/repository.service';
+import { PersonaDeleteComponent } from '../persona-delete/persona-delete.component';
 
 @Component({
   selector: 'app-persona-list',
@@ -34,7 +35,36 @@ export class PersonaListComponent implements OnInit{
   }
 
   deletePersona(id: number | undefined){
-    // Aquí iría tu lógica para eliminar la persona
+    if(id !== undefined)
+    {
+      const dialogRef = this.dialog.open(PersonaDeleteComponent, {
+        width: '400px',
+        
+      }
+      );
+      dialogRef.afterClosed().subscribe(result => {
+        if(result === 'yes'){
+          let url = 'persona/' + id;
+          this.repository.delete(url).subscribe(() => {
+            console.log('Deleted record:', id);
+            this.llenarDatosPersona();
+          },
+          (error) => {
+            if(error.status === 500)
+            {
+              this.openErrorDialog();
+            }
+            this.errorService.handleError(error);
+            console.log(error);
+          }
+          )
+        }
+      });
+
+    }
+  }
+  openErrorDialog() {
+    throw new Error('Method not implemented.');
   }
 
   //editar
