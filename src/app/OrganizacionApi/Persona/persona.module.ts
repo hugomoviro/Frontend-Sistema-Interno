@@ -8,6 +8,7 @@ import { PersonaRoutingModule } from './persona-routing/persona-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PersonaCreateComponent } from './persona-create/persona-create.component';
 
 
 
@@ -15,7 +16,8 @@ import { MatDialogModule } from '@angular/material/dialog';
   declarations: [
     PersonaListComponent,
     PersonaUpdateComponent,
-    PersonaDeleteComponent
+    PersonaDeleteComponent,
+    PersonaCreateComponent
   ],
   imports: [
     CommonModule,

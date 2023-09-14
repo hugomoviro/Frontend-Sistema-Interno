@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Persona } from 'src/app/Models/Persona.model';
 import { ErrorHanderService } from 'src/app/shared/error-hander.service';
 import { RepositoryService } from 'src/app/shared/repository.service';
@@ -16,7 +17,8 @@ export class PersonaListComponent implements OnInit{
   constructor(
     private repository: RepositoryService,
     private errorService: ErrorHanderService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -34,4 +36,10 @@ export class PersonaListComponent implements OnInit{
   deletePersona(id: number | undefined){
     // Aquí iría tu lógica para eliminar la persona
   }
+
+  addPersona(){
+    let url: string = `persona/crearpersona`;
+    this.router.navigate([url]);
+  }
+
 }
