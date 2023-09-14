@@ -1,53 +1,44 @@
 <label class="title">Crear Nueva Persona</label>
 <hr class="hrblack">
 
-<div style="width: 70%; margin: 30px 40px;">
-    <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevaPersona.Nombre" name="nombre">
-    </div>
-    
-    <div class="form-group">
-        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-        <input type="date" class="form-control" id="fechaNacimiento" [(ngModel)]="nuevaPersona.FechaDeNacimiento" name="fechaNacimiento">
-    </div>
-    
-    <div class="form-group">
-        <label for="direccion">Dirección:</label>
-        <input type="text" class="form-control" id="direccion" [(ngModel)]="nuevaPersona.Direccion" name="direccion">
-    </div>
-    
-    <div class="form-group">
-        <label for="correoTrabajo">Correo de Trabajo:</label>
-        <input type="email" class="form-control" id="correoTrabajo" [(ngModel)]="nuevaPersona.CorreoTrabajo" name="correoTrabajo">
-    </div>
-    
-    <div class="form-group">
-        <label for="correoPersonal">Correo Personal:</label>
-        <input type="email" class="form-control" id="correoPersonal" [(ngModel)]="nuevaPersona.CorreoPersonal" name="correoPersonal">
-    </div>
-    
-    <div class="form-group">
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" class="form-control" id="telefono" [(ngModel)]="nuevaPersona.Telefono" name="telefono">
-    </div>
-    
-    <div class="form-group">
-        <div class="checkbox-container">
-            <input style="margin-left: 60px;" type="checkbox" class="form-check-input" id="activo" [(ngModel)]="nuevaPersona.Activa" name="activo">
-            <label for="activo">Activo</label>
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label for="puesto">Puesto:</label>
-        <select class="form-control" id="puesto" [(ngModel)]="nuevaPersona.PuestoId" name="puesto">
-            <option *ngFor="let puesto of listaDePuestos" [ngValue]="puesto">{{ puesto.Descripcion }}</option>
+<div class="container">
+    <h2>Crear Nueva Persona</h2>
+    <form [formGroup]="nuevaPersona" (ngSubmit)="createPersona(nuevaPersona.value)">
+      <div class="form-group">
+        <label for="Nombre">Nombre:</label>
+        <input type="text" formControlName="Nombre" class="form-control" id="Nombre">
+      </div>
+      <div class="form-group">
+        <label for="FechaDeNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" formControlName="FechaDeNacimiento" class="form-control" id="FechaDeNacimiento">
+      </div>
+      <div class="form-group">
+        <label for="Direccion">Dirección:</label>
+        <input type="text" formControlName="Direccion" class="form-control" id="Direccion">
+      </div>
+      <div class="form-group">
+        <label for="CorreoTrabajo">Correo de Trabajo:</label>
+        <input type="email" formControlName="CorreoTrabajo" class="form-control" id="CorreoTrabajo">
+      </div>
+      <div class="form-group">
+        <label for="CorreoPersonal">Correo Personal:</label>
+        <input type="email" formControlName="CorreoPersonal" class="form-control" id="CorreoPersonal">
+      </div>
+      <div class="form-group">
+        <label for="Telefono">Teléfono:</label>
+        <input type="tel" formControlName="Telefono" class="form-control" id="Telefono">
+      </div>
+      <div class="form-group">
+        <label for="Activa">Activa:</label>
+        <input type="checkbox" formControlName="Activa" class="form-check-input" id="Activa">
+      </div>
+      <div class="form-group">
+        <label for="PuestoId">Puesto:</label>
+        <select formControlName="PuestoId" class="form-control" id="PuestoId">
+          <option *ngFor="let puesto of listaDePuestos" [value]="puesto.Id">{{ puesto.Descripcion }}</option>
         </select>
-    </div>
-</div>
-
-
-<div style="margin-top: 30px;">
-    <button (click)="guardarPersona()" class="btn btn-success">Guardar Persona</button>
-</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar Persona</button>
+    </form>
+  </div>
+  

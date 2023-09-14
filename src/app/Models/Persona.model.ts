@@ -1,5 +1,5 @@
 export interface Persona {
-    Id: number;
+    Id?: number;
     Nombre: string;
     FechaDeNacimiento: string; // Dependiendo del formato de fecha que utilices
     Direccion: string;
