@@ -63,5 +63,10 @@ export class PersonaCreateComponent implements OnInit{
       }
       )
   }
+
+  //Boton de cancelar
+  public cancelar = () => {
+    this.router.navigate(['/persona']);
+  }
   
 }
