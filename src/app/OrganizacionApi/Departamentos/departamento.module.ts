@@ -5,7 +5,7 @@ import { DepartamentoListComponent } from './departamento-list/departamento-list
 import { DepartamentoCreateComponent } from './departamento-create/departamento-create.component';
 import { DepartamentoUpdateComponent } from './departamento-update/departamento-update.component';
 import { DepartamentoDeleteComponent } from './departamento-delete/departamento-delete.component';
-
+import { DepartamentoRoutingModule } from './departamento-routing/departamento-routing.module';
 
 @NgModule({
     declarations: [
@@ -13,10 +13,13 @@ import { DepartamentoDeleteComponent } from './departamento-delete/departamento-
     DepartamentoCreateComponent,
     DepartamentoUpdateComponent,
     DepartamentoDeleteComponent
+
+
   ],
     imports: [
         CommonModule,
         SharedModule,
+        DepartamentoRoutingModule
     ]
     })
 

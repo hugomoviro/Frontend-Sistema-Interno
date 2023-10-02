@@ -1,14 +1,14 @@
 import { Routes, RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { PersonaListComponent } from "../../Persona/persona-list/persona-list.component";
-import { PersonaCreateComponent } from "../../Persona/persona-create/persona-create.component";
-import { PersonaUpdateComponent } from "../../Persona/persona-update/persona-update.component";
+import { DepartamentoListComponent } from "../departamento-list/departamento-list.component";
+import { DepartamentoCreateComponent } from "../departamento-create/departamento-create.component";
+import { DepartamentoUpdateComponent } from "../departamento-update/departamento-update.component";
 
 const routes: Routes = [
-    {path : '', component: PersonaListComponent},
-    {path : 'crearpersona', component: PersonaCreateComponent},
-    {path : 'editarpersona/:id', component: PersonaUpdateComponent}
+    {path : '', component: DepartamentoListComponent},
+    {path : 'creardepartamento', component: DepartamentoCreateComponent},
+    {path : 'editardepartamento/:id', component: DepartamentoUpdateComponent}
 ];
 
 @NgModule({

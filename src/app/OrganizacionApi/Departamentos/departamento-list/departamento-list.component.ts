@@ -10,7 +10,7 @@ import { RepositoryService } from 'src/app/shared/repository.service';
   styleUrls: ['./departamento-list.component.css']
 })
 export class DepartamentoListComponent {
-  departamento: any = {};
+  departamentos: any = {};
 
   constructor(
     private repository: RepositoryService,
@@ -26,8 +26,8 @@ export class DepartamentoListComponent {
   llenarDatosDepartamento(){
     let url = 'Departamento?$expand=Persona($select=Nombre)'
     this.repository.getData(url).subscribe(e => {
-      this.departamento = e;
-      console.log(this.departamento)
+      this.departamentos = e;
+      console.log(this.departamentos)
     });
   }
 
