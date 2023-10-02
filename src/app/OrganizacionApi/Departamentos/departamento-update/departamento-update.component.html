@@ -1,1 +1,30 @@
-<p>departamento-update works!</p>
+<label class="title">Actualizar Departamento</label>
+<hr class="hrblack">
+
+<div class="container">
+  <h2>Actualizar Departamento</h2>
+  <form [formGroup]="departamentoForm" (ngSubmit)="updateDepartamento(departamentoForm.value)">
+    <div class="form-group">
+      <label for="Nombre">Nombre:</label>
+      <input type="text" formControlName="Nombre" class="form-control" id="Nombre">
+    </div>
+    <div class="form-group">
+        <label for="Nombre">Numero:</label>
+        <input type="text" formControlName="Nombre" class="form-control" id="Nombre">
+    </div>
+    <div class="form-group">
+        <label for="ResponsableId">Responsable:</label>
+        <select formControlName="ResponsableId" class="form-control" id="ResponsableId">
+          <option *ngFor="let responsable of listaDePersonas" [value]="responsable.Id">{{ responsable.Nombre }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="EmpresaId">Empresa:</label>
+        <select formControlName="EmpresaId" class="form-control" id="EmpresaId">
+          <option *ngFor="let empresa of listaDeEmpresas" [value]="empresa.Id">{{ empresa.Nombre }}</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Actualizar Departamento</button>
+    <button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
+  </form>
