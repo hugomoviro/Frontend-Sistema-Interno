@@ -6,6 +6,9 @@ import { DepartamentoCreateComponent } from './departamento-create/departamento-
 import { DepartamentoUpdateComponent } from './departamento-update/departamento-update.component';
 import { DepartamentoDeleteComponent } from './departamento-delete/departamento-delete.component';
 import { DepartamentoRoutingModule } from './departamento-routing/departamento-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
     declarations: [
@@ -19,7 +22,11 @@ import { DepartamentoRoutingModule } from './departamento-routing/departamento-r
     imports: [
         CommonModule,
         SharedModule,
-        DepartamentoRoutingModule
+        DepartamentoRoutingModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        MatDialogModule,
+        FormsModule
     ]
     })
 

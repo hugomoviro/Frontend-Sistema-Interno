@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { RepositoryService } from 'src/app/shared/repository.service';
   templateUrl: './departamento-create.component.html',
   styleUrls: ['./departamento-create.component.css']
 })
-export class DepartamentoCreateComponent {
+export class DepartamentoCreateComponent implements OnInit{
 
   public nuevoDepartamento!: FormGroup;
 
@@ -61,16 +61,18 @@ export class DepartamentoCreateComponent {
   public getListaDePersonas = () => {
     let apiAddress: string = "persona";
     this.repository.getData(apiAddress)
-      .subscribe(res => {
-        this.listaDePersonas = res as Persona[];
+      .subscribe((res : any) => {
+        this.listaDePersonas = res.value as Persona[];
+        console.log('Lista de Personas:',this.listaDePersonas);
       })
   }
 
   public getListaDeEmpresas = () => {
     let apiAddress: string = "empresa";
     this.repository.getData(apiAddress)
-      .subscribe(res => {
-        this.listaDeEmpresas = res as Empresa[];
+      .subscribe((res : any) => {
+        this.listaDeEmpresas = res.value as Empresa[];
+        console.log('Lista de Empresas:',this.listaDeEmpresas);
       })
   }
 

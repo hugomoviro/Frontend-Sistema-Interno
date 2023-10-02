@@ -3,7 +3,7 @@ export interface Departamento {
     Numero: number;
     Nombre: string;
     ResponsableId?: string;
-    EmpresaId?: string;
+    EmpresaId?: string | null;
 
 }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-departamento-delete',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class DepartamentoDeleteComponent {
 
+  constructor(public dialogRef: MatDialogRef<DepartamentoDeleteComponent>) { }
+
+  confirmDelete(){
+    this.dialogRef.close('yes');
+  }
+
+  ngOnInit(): void {
+  }
 }
